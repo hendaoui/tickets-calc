@@ -1,0 +1,7 @@
+{
+  "name": "tickets-Calc",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

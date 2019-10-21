@@ -1,0 +1,53 @@
+.toolbar-icon {
+  margin: 9px 10px !important;
+  height: 55px !important;
+  width: 55px !important;
+}
+ion-toolbar {
+  --background: #ffff;
+}
+ion-input {
+  border-radius: 0 0 25px 25px !important;
+  margin: 0 45px 45px auto !important;
+  --padding-top: 50px !important;
+}
+
+.results-container {
+  padding: 25px;
+  padding-top: 0px;
+}
+
+ion-checkbox {
+  border-radius: 50% !important;
+  padding: 10px !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+ion-toggle {
+  float: right !important;
+  zoom: 1.3 !important;
+}
+
+.subtracted-percent {
+  border-bottom: 1px solid #00000024;
+  margin-top: -15px;
+}
+
+.subtracted-percent h4 {
+  margin-left: 12px;
+  font-weight: 700;
+}
+
+.custom-disabled {
+  color: #acadaf;
+}
+
+ion-chip {
+  zoom: 1.3;
+}
+
+.results-container p {
+  font-size: 1.7rem;
+  font-weight: 100;
+}

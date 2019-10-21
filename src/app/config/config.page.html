@@ -1,0 +1,33 @@
+<ion-header no-border color="primary" *ngIf="!globalService.isNewApp">
+  <ion-toolbar>
+    <ion-buttons slot="end" *ngIf="!globalService.isNewApp">
+      <ion-button class="toolbar-icon" (click)="openHome()">
+        <ion-icon slot="icon-only" name="ios-close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ion-content" [ngClass]="{'m-top-5': globalService.isNewApp}">
+    <form [formGroup]="configForm">
+      <h2>Please Enter your Ticket's Value (dt)</h2>
+      <ion-input required type="number" min="0" [placeholder]="ticketValue" formControlName="ticketValue"
+        (change)="handleTicketValue()"></ion-input>
+      <h2>Please Enter The Subtracted Percentage (%)</h2>
+      <ion-input required type="number" min="0" max="100" [placeholder]="subtractedPercent"
+        formControlName="subtractedPercent" (change)="handleSubtractedPercent()"></ion-input>
+    </form>
+  </div>
+</ion-content>
+<ion-tabs no-border>
+  <ion-tab-bar slot="bottom">
+    <ion-toolbar>
+        <ion-buttons>
+          <ion-button class="toolbar-icon-bottom" (click)="saveConfig()">
+              <ion-icon slot="icon-only" name="arrow-forward" *ngIf="globalService.isNewApp"></ion-icon>
+              <ion-icon slot="icon-only" name="checkmark-circle-outline" *ngIf="!globalService.isNewApp"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+  </ion-tab-bar>
+</ion-tabs>
