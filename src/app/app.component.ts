@@ -22,7 +22,8 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleLightContent();
+      this.statusBar.backgroundColorByName('white');
+      this.statusBar.styleDefault();
       this.isNewApp();
       if (this.globalService.isNewApp) {
         this.ngZone.run(() => {

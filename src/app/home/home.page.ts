@@ -53,7 +53,7 @@ export class HomePage implements OnInit{
 
   doCalculation(amount) {
     let availableAmount = this.getAvailableAmount();
-    if (amount >= availableAmount) {
+    if (amount >= availableAmount && availableAmount > 0) {
       let _rest = amount / availableAmount;
       if (_rest >= 1) {
         this.ticketsNumber = parseInt(_rest.toString().includes('.') ? _rest.toString().split(".")[0] : _rest.toString());
@@ -64,6 +64,9 @@ export class HomePage implements OnInit{
           this.rest = '0';
         }
       }
+    } else if (availableAmount === 0) {
+      this.ticketsNumber = 1
+      this.rest = (amount < 1000 ? amount / 1000 : amount).toString();
     } else {
       this.ticketsNumber = 0;
       this.rest = '0';
@@ -84,6 +87,7 @@ export class HomePage implements OnInit{
   }
 
   openConfig() {
+    this.homeForm.reset();
     this.router.navigateByUrl('/config');
   }
 }

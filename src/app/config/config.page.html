@@ -5,10 +5,15 @@
         <ion-icon slot="icon-only" name="ios-close"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button class="toolbar-icon-info" (click)="showInfo()">
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <div class="ion-content" [ngClass]="{'m-top-5': globalService.isNewApp}">
+<ion-content overflow-scroll="true">
+  <div class="ion-content" [ngClass]="{'m-top-1': globalService.isNewApp}">
     <form [formGroup]="configForm">
       <h2>Please Enter your Ticket's Value (dt)</h2>
       <ion-input required type="number" min="0" [placeholder]="ticketValue" formControlName="ticketValue"
@@ -19,15 +24,9 @@
     </form>
   </div>
 </ion-content>
-<ion-tabs no-border>
-  <ion-tab-bar slot="bottom">
-    <ion-toolbar>
-        <ion-buttons>
-          <ion-button class="toolbar-icon-bottom" (click)="saveConfig()">
-              <ion-icon slot="icon-only" name="arrow-forward" *ngIf="globalService.isNewApp"></ion-icon>
-              <ion-icon slot="icon-only" name="checkmark-circle-outline" *ngIf="!globalService.isNewApp"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-  </ion-tab-bar>
-</ion-tabs>
+<ion-fab horizontal="center" vertical="bottom" slot="fixed">
+  <ion-fab-button color="dark">
+    <ion-icon name="arrow-forward" *ngIf="globalService.isNewApp"></ion-icon>
+    <ion-icon name="save" *ngIf="!globalService.isNewApp"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
