@@ -22,8 +22,8 @@ export class ConfigPage implements OnInit {
     this.initPlaceholders();
     this.configForm = new FormGroup({
       ticketValue: new FormControl([Validators.required]),
-      subtractedPercent: new FormControl(this.globalService.subtractedPercent || null, )
-   });
+      subtractedPercent: new FormControl(this.globalService.subtractedPercent || null)
+    });
   }
 
   ionViewWillEnter() {
@@ -32,12 +32,12 @@ export class ConfigPage implements OnInit {
         ticketValue: this.globalService.ticketValue || null,
         subtractedPercent: this.globalService.subtractedPercent || null
       })
-    },150);
- }
+    }, 150);
+  }
 
   handleTicketValue() {
     if (this.configForm.controls.ticketValue.value)
-    this.ticketValue = Math.abs(parseInt(this.configForm.controls.ticketValue.value) || 0);
+      this.ticketValue = Math.abs(parseInt(this.configForm.controls.ticketValue.value) || 0);
   }
 
   handleSubtractedPercent() {
@@ -79,5 +79,13 @@ export class ConfigPage implements OnInit {
       cssClass: 'c-toast'
     });
     toast.present();
+  }
+
+  scroll(event, id) {
+    if (id === 0) {
+      event.currentTarget.scrollIntoView();
+    } else {
+      document.getElementById("bottom").scrollIntoView();
+    }
   }
 }

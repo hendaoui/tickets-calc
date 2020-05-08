@@ -10,7 +10,8 @@
 <ion-content>
   <div class="home-content">
     <form [formGroup]="homeForm">
-      <ion-input #input autofocus="true" required type="number" min="0" [placeholder]="0" formControlName="amount" clearInput (ionInput)="prepareCalculation()">
+      <ion-input #input autofocus="true" required type="number" min="0" [placeholder]="0" formControlName="amount"
+        clearInput (ionInput)="prepareCalculation()">
       </ion-input>
     </form>
   </div>
@@ -34,7 +35,7 @@
         <ion-col>
           <p>{{ticketsNumber}} x Ticket{{ticketsNumber > 1 ? 's' : null}}</p>
         </ion-col>
-        <ion-col size="1" *ngIf="rest > 0">
+        <ion-col size="1" *ngIf="rest !== '0'">
           <p>&</p>
         </ion-col>
         <ion-col *ngIf="rest !== '0'">

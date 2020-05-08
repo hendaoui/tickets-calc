@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home/home.page';
 import { ConfigPage } from './config/config.page';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'app', pathMatch: 'full' },
+  { path: 'app', component: AppComponent},
   { path: 'home', component: HomePage},
   { path: 'config', component: ConfigPage }
 ];

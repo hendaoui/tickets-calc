@@ -9,7 +9,7 @@ import { GlobalService } from '../global.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{
+export class HomePage implements OnInit {
   public homeForm;
   public activePercent = true;
   public ticketsNumber: number = 0;
@@ -31,9 +31,14 @@ export class HomePage implements OnInit{
   ionViewWillEnter() {
     setTimeout(() => {
       this.myInput.setFocus();
-      this.keyboard.show();
-    },150);
- }
+      document.addEventListener('admob.banner.events.LOAD', () => {
+        this.keyboard.show();
+      });
+      document.addEventListener('admob.banner.events.LOAD_FAIL', () => {
+        this.keyboard.show();
+      });
+    }, 150);
+  }
 
   prepareCalculation(amount?) {
     if (amount) {

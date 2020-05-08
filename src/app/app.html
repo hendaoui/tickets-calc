@@ -1,4 +1,6 @@
 <ion-app>
-  <!--<ion-nav [root]="globalService.rootPage" #content swipeBackEnabled="false"></ion-nav>-->
   <ion-router-outlet></ion-router-outlet>
+  <ion-content class="ion-padding" *ngIf="globalService.isLoading">
+    <ion-spinner name="crescent"></ion-spinner>
+  </ion-content>
 </ion-app>

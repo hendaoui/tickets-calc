@@ -17,12 +17,14 @@
     <form [formGroup]="configForm">
       <h2>Please Enter your Ticket's Value (dt)</h2>
       <ion-input required type="number" min="0" [placeholder]="ticketValue" formControlName="ticketValue"
-        (change)="handleTicketValue()"></ion-input>
+        (change)="handleTicketValue()" (ionFocus)="scroll($event, 0)"></ion-input>
       <h2>Please Enter The Subtracted Percentage (%)</h2>
       <ion-input required type="number" min="0" max="100" [placeholder]="subtractedPercent"
-        formControlName="subtractedPercent" (change)="handleSubtractedPercent()"></ion-input>
+        formControlName="subtractedPercent" (change)="handleSubtractedPercent()" (ionFocus)="scroll($event, 1)">
+      </ion-input>
     </form>
   </div>
+  <div id="bottom" style="height: 90px;"></div>
 </ion-content>
 <ion-fab horizontal="center" vertical="bottom" slot="fixed" (click)="saveConfig()">
   <ion-fab-button color="dark">
