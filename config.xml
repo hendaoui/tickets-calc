@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="tickets.calc" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="tickets.calc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Tickets-Calc</name>
-    <description>Simple Tickets Calculator</description>
+    <description>Sodexo Tickets Calculator</description>
     <author email="henihendaoui@gmail.com" href="http://www.google.com/">Heni Hendaoui</author>
     <content src="index.html" />
     <access origin="*" />
@@ -97,4 +97,7 @@
     <plugin name="cordova-plugin-device" spec="2.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
+    <plugin name="cordova-admob-sdk" spec="~0.13.1">
+        <variable name="PLAY_SERVICES_VERSION" value="11.6.0" />
+    </plugin>
 </widget>
